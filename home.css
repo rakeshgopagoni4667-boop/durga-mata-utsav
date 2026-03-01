@@ -1,25 +1,28 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background-color: #8b0000;
+    background: #8b0000;
     color: white;
     flex-wrap: wrap;
 }
 
-.logo { display: flex; align-items: center; }
+.logo {
+    display: flex;
+    align-items: center;
+}
 
 .logo img {
     width: 45px;
@@ -29,6 +32,7 @@ header {
 nav {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -38,9 +42,10 @@ nav a {
     cursor: pointer;
 }
 
-nav a:hover { text-decoration: underline; }
+nav a:hover {
+    text-decoration: underline;
+}
 
-/* HOME */
 .home {
     height: 90vh;
     display: flex;
@@ -49,25 +54,38 @@ nav a:hover { text-decoration: underline; }
     text-align: center;
     color: white;
     font-size: 42px;
+    padding: 0 60px;
     background-size: cover;
     background-position: center;
-    animation: fadeBackground 15s infinite;
     position: relative;
+    animation: fadeBackground 15s infinite;
 }
 
 .home::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: radial-gradient(circle at center, rgba(255,215,0,.15), rgba(0,0,0,.6));
 }
 
 .home h1 {
     position: relative;
     z-index: 1;
+    animation: fadeSlide 2s ease-in-out;
 }
 
-/* SECTIONS */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeBackground {
+    0% { background-image: url('https://i.pinimg.com/originals/c0/2b/3e/c02b3e6ab2bfacd3eeb6231248d9920f.jpg'); }
+    33% { background-image: url('https://wallpapers.com/images/hd/golden-durga-mata-hd-1ra1ojdbx5x7luyr.jpg'); }
+    66% { background-image: url('https://thumbs.dreamstime.com/b/background-durga-puja-festival-india-hindu-goddess-idol-festivals-west-bengal-78534117.jpg'); }
+    100% { background-image: url('https://i.pinimg.com/originals/c0/2b/3e/c02b3e6ab2bfacd3eeb6231248d9920f.jpg'); }
+}
+
 .donation-form,
 .about-section,
 .donation-list {
@@ -90,20 +108,28 @@ button {
     background-color: #8b0000;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover { background-color: darkred; }
+button:hover {
+    background-color: darkred;
+}
 
-/* TABLE */
 table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
+    margin-top: 25px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
+    padding: 12px;
+    text-align: center;
 }
 
 th {
@@ -111,17 +137,37 @@ th {
     color: white;
 }
 
-/* FOOTER */
 footer {
     background-color: #8b0000;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px 15px;
+    margin-top: 50px;
 }
 
-/* BACKGROUND ANIMATION */
-@keyframes fadeBackground {
-    0% { background-image: url('https://i.pinimg.com/originals/c0/2b/3e/c02b3e6ab2bfacd3eeb6231248d9920f.jpg'); }
-    50% { background-image: url('https://wallpapers.com/images/hd/golden-durga-mata-hd-1ra1ojdbx5x7luyr.jpg'); }
-    100% { background-image: url('https://thumbs.dreamstime.com/b/background-durga-puja-festival-india-hindu-goddess-idol-festivals-west-bengal-78534117.jpg'); }
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .home {
+        font-size: 26px;
+        height: 70vh;
+        padding: 0 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 13px;
+    }
 }
