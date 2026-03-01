@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durga Mata Utsav Committee</title>
+
+<!-- Link CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/049/530/821/small/silhouette-art-reflecting-durga-powerful-and-majestic-face-free-vector.jpg" alt="Durga Logo">
+        <h2>Durga Mata Utsav Committee</h2>
+    </div>
+
+    <nav>
+        <a onclick="showHome()">Home</a>
+        <a onclick="showDonation()">Donation</a>
+        <a onclick="showDonationList()">Donation List</a>
+        <a onclick="showAbout()">About</a>
+    </nav>
+</header>
+
+<div class="home" id="homeSection">
+    <h1>Welcome to Durgadevi Navratri Utsavas</h1>
+</div>
+
+<div class="donation-form" id="donationSection">
+    <h2>Donation Form</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="phone" placeholder="Enter Phone Number">
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <div id="captcha"></div>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
+    <button onclick="validateCaptcha()">Submit</button>
+</div>
+
+<div class="donation-list" id="donationListSection">
+    <h2>Donation List</h2>
+    <button onclick="downloadCSV()">Download List</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="donationTableBody"></tbody>
+    </table>
+    <h3>Total Donation: ₹ <span id="totalAmount">0.00</span></h3>
+</div>
+
+<div class="about-section" id="aboutSection">
+    <h2>About Durga Mata Utsav Committee</h2>
+    <p>Durga Mata Utsav Committee is a sacred and devotional organization formed with the blessings of Maa Durga.</p>
+    <p>We organize Durga Puja celebrations, bhajans, cultural programs and spiritual gatherings.</p>
+    <p>May Maa Durga bless all devotees.</p>
+</div>
+
+<footer>
+    <p>📧 Email: <a href="mailto:durgamautsav@gmail.com">durgamautsav@gmail.com</a></p>
+    <p>🌐 Website: <a href="https://www.durgamautsav.com" target="_blank">www.durgamautsav.com</a></p>
+    <p>© 2026 Durga Mata Utsav Committee</p>
+</footer>
+
+<!-- Link JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
